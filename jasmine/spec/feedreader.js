@@ -27,7 +27,21 @@ $(function() {
         });
 
 
-        /* TODO: Write a test that loops through each feed
+        it('all have urls', function() { 
+            allFeeds.forEach(function(eachFeed) { 
+                expect(eachFeed.url).toBeDefined(); 
+                expect(eachFeed.url.length).not.toBe(0);
+                expect(eachFeed.url).toMatch("http");  
+            }); 
+        });
+
+        it('all have names', function() { 
+            allFeeds.forEach(function(eachFeed) { 
+                expect(eachFeed.name).toBeDefined(); 
+                expect(eachFeed.name.length).not.toBe(0);  
+            }); 
+        });
+    /* TODO: Write a test that loops through each feed
          * in the allFeeds object and ensures it has a URL defined
          * and that the URL is not empty.
          */
