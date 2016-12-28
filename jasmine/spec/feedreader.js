@@ -53,6 +53,26 @@ $(function() {
          */
     });
 
+    describe('The menu', function() {
+        var body = $('body');  
+        var menuIcon = $('menu-icon-link');
+
+        it('is hidden by default', function() { 
+            expect(body.hasClass('menu-hidden')).toBe(true); 
+        });
+
+        it('become visibile when the menu icon is clicked', function() { 
+            menuIcon.click(); 
+            expect(body.hasClass('menu-hidden')).toBe(false); 
+        });
+
+         it('becomes hidden when the menu icon is clicked for second time', function() { 
+            menuIcon.click(); 
+            expect(body.hasClass('menu-hidden')).toBe(true); 
+            });  
+
+
+    }); 
 
     /* TODO: Write a new test suite named "The menu" */
 
