@@ -54,25 +54,38 @@ $(function() {
     });
 
     describe('The menu', function() {
+        
+
+        beforeEach(function() {
         var body = $('body');  
         var menuIcon = $('menu-icon-link');
+    });  
 
         it('is hidden by default', function() { 
             expect(body.hasClass('menu-hidden')).toBe(true); 
         });
 
-        it('become visibile when the menu icon is clicked', function() { 
-            menuIcon.click(); 
-            expect(body.hasClass('menu-hidden')).toBe(false); 
+        it('appears when clicked, then is hidden when clicked again', function() {
+            if (body.hasClass("menu-hidden")) {
+                menuIcon.click();
+
+                expect(body.hasClass("menu-hidden")).toBe(false);
+            } 
+
+            if (!body.hasClass("menu-hidden")) {
+                menuIcon.click();
+
+                expect($("body").hasClass("menu-hidden")).toBe(true);
+            } 
+
         });
-
-         it('becomes hidden when the menu icon is clicked for second time', function() { 
-            menuIcon.click(); 
-            expect(body.hasClass('menu-hidden')).toBe(true); 
-            });  
-
-
     }); 
+
+
+ 
+
+}());
+
 
     /* TODO: Write a new test suite named "The menu" */
 
@@ -103,4 +116,4 @@ $(function() {
          * by the loadFeed function that the content actually changes.
          * Remember, loadFeed() is asynchronous.
          */
-}());
+
