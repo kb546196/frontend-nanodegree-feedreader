@@ -81,6 +81,19 @@ $(function() {
         });
     }); 
 
+    describe('Initial entries', function() {
+    
+        beforeEach(function(done) {
+        loadFeed(0, function() {
+            done();
+      });
+    });
+
+        it('feed containers has at least one entries', function() { 
+            var feedEntries = $('.entry');
+            expect(feedEntries.length).toBeGreaterThan(0);
+    });
+         }); 
 
  
 
