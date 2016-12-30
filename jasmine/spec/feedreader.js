@@ -37,7 +37,7 @@ $(function() {
                 expect(eachFeed.url).toBeDefined(); 
                 //that it is not empty 
                 expect(eachFeed.url.length).not.toBe(0);
-                //and includes 'http'
+                //and includes 'http' - so it a link
                 expect(eachFeed.url).toMatch('http');  
             }); 
         });
@@ -48,7 +48,7 @@ $(function() {
         it('all have names', function() { 
             //loops through each feed
             allFeeds.forEach(function(eachFeed) { 
-                //that each feed has a name 
+                //checks each feed has a name 
                 expect(eachFeed.name).toBeDefined(); 
                 //and that the name is not empty
                 expect(eachFeed.name.length).not.toBe(0);  
@@ -62,6 +62,7 @@ $(function() {
         beforeEach(function() {
             body = $('body');  
             menuIcon = $('.menu-icon-link');
+            hiddenClass = 'menu-hidden'; 
         });  
         /* TODO: Write a test that ensures the menu element is
          * hidden by default. You'll have to analyze the HTML and
@@ -70,7 +71,7 @@ $(function() {
          */
         //checks body has .menu-hidden class when page is loaded
         it('is hidden by default', function() { 
-            expect(body.hasClass('menu-hidden')).toBe(true); 
+            expect(body.hasClass(hiddenClass)).toBe(true); 
         });
         /* TODO: Write a test that ensures the menu changes
         * visibility when the menu icon is clicked. This test
@@ -79,14 +80,14 @@ $(function() {
         */
         //checks body no longer  has menu-hidden class when icon is clicked
         it('appears when clicked, then is hidden when clicked again', function() {
-            if (body.hasClass('menu-hidden')) {
+            if (body.hasClass(hiddenClass)) {
                 menuIcon.click();
-                expect(body.hasClass('menu-hidden')).toBe(false);
+                expect(body.hasClass(hiddenClass)).toBe(false);
             } 
             //and checks the body returns back to having menu-hidden class when icon is clicked again
-            if (!body.hasClass('menu-hidden')) {
+            if (!body.hasClass(hiddenClass)) {
                 menuIcon.click();
-                expect(body.hasClass('menu-hidden')).toBe(true);
+                expect(body.hasClass(hiddenClass)).toBe(true);
             } 
         });
     }); 
@@ -131,7 +132,7 @@ $(function() {
             }));   
         });
         //compares the firstFeed to the secondFeed to ensure it has updated 
-        it('check if new feed is loaded', function() { 
+        it('check if new feed is loaded', function() {  
             expect(firstFeed).toBeDefined(); 
             expect(secondFeed).toBeDefined(); 
             expect(secondFeed).not.toEqual(firstFeed); 
