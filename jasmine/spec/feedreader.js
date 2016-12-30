@@ -38,7 +38,7 @@ $(function() {
                 //that it is not empty 
                 expect(eachFeed.url.length).not.toBe(0);
                 //and includes 'http'
-                expect(eachFeed.url).toMatch("http");  
+                expect(eachFeed.url).toMatch('http');  
             }); 
         });
         /* TODO: Write a test that loops through each feed
@@ -58,10 +58,10 @@ $(function() {
 
     /* TODO: Write a new test suite named "The menu" */
     describe('The menu', function() {
-        
+
         beforeEach(function() {
-            var body = $('body');  
-            var menuIcon = $('menu-icon-link');
+            body = $('body');  
+            menuIcon = $('.menu-icon-link');
         });  
         /* TODO: Write a test that ensures the menu element is
          * hidden by default. You'll have to analyze the HTML and
@@ -79,14 +79,14 @@ $(function() {
         */
         //checks body no longer  has menu-hidden class when icon is clicked
         it('appears when clicked, then is hidden when clicked again', function() {
-            if (body.hasClass("menu-hidden")) {
+            if (body.hasClass('menu-hidden')) {
                 menuIcon.click();
-                expect(body.hasClass("menu-hidden")).toBe(false);
+                expect(body.hasClass('menu-hidden')).toBe(false);
             } 
             //and checks the body returns back to having menu-hidden class when icon is clicked again
-            if (!body.hasClass("menu-hidden")) {
+            if (!body.hasClass('menu-hidden')) {
                 menuIcon.click();
-                expect($("body").hasClass("menu-hidden")).toBe(true);
+                expect(body.hasClass('menu-hidden')).toBe(true);
             } 
         });
     }); 
