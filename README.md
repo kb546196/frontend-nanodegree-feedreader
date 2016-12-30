@@ -1,8 +1,8 @@
 # Feed Reader Testing
 
-This is a project is for the [Udacity Front-End Web Developer Nanodegree](https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001). 
+This is a project is for the [Udacity Front-End Web Developer Nanodegree](https://www.udacity.com/course/front-end-web-developer-nanodegree--nd001). The aim of the project is to introduce students to unit testing using Jasmine. 
 
-The aim of the project is to introduce students to unit testing using Jasmine. By amending the `feedreader.js` file to write tests tests for a prexisiting  web-based application that reads RSS feeds.  
+The project began with a pre-existing a web-based application which reads RSS feeds. Students had to amend the `feedreader.js` file to write tests to check  the underlying business logic of the application as well as the event handling and DOM manipulation. 
 
 - - - - 
 ### Getting started
